@@ -1,15 +1,8 @@
 # cloudfunctions
 
-
-- function
-- The main() function first retrieves the bot token from Secret Manager. This token is used to authenticate the bot with Telegram.
-
-- The main() function then creates an instance of the Updater class. The Updater class is used to manage the bot's interactions with Telegram.
-
-- The main() function then adds a handler to the Updater class's dispatcher. This handler will be called when the bot receives a message with the "hello" command.
-
-- The main() function then de-serializes the request payload into an Update object. This object contains information about the request that was received.
-
-- Finally, the main() function calls the dp.process_update() method to process the request. This method will call the handler that was added to the dispatcher, if there is one that matches the request.
-
-- If the request does not match any of the handlers, the dp.process_update() method will return an error.
+- User sends a message to the bot in a chat.
+- Telegram's servers send a webhook POST request to your server.
+- Your server processes the incoming request using the webhook function.
+- The webhook function extracts the chat ID from the update.
+- The bot instance sends a message back to the same chat with the content "hey there!".
+- The webhook function returns "OK" to acknowledge the successful processing of the request.
